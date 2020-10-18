@@ -1,0 +1,74 @@
+package com.bdc.personalcashloan;
+import java.util.Date;
+import java.util.concurrent.TimeUnit; 
+import com.bdc.personalcashloan.Applicant;
+import com.bdc.personalcashloan.Loan;
+
+
+
+    function  int Days(Date date) {
+	    Date curentDate = new Date();  
+        long difference_In_Time = curentDate.getTime() - date.getTime(); 
+        long difference_In_Years = TimeUnit .MILLISECONDS .toDays(difference_In_Time) / 365;  
+        return (int) difference_In_Years ;
+	}
+	
+	
+    function  int Months(Date date) {
+	    Date curentDate = new Date();  
+        long difference_In_Time = curentDate.getTime() - date.getTime(); 
+        long difference_In_Monthes = TimeUnit .MILLISECONDS .toDays(difference_In_Time)  % 12; 
+        return (int) difference_In_Monthes ;
+	}
+	
+    function  int years(Date date) {
+	    Date curentDate = new Date();  
+        long difference_In_Time = curentDate.getTime() - date.getTime(); 
+         long difference_In_Years = TimeUnit .MILLISECONDS .toDays(difference_In_Time) / 365l; 
+        return (int) difference_In_Years ;
+	}
+
+no-loop
+rule "date birth approve " salience 10
+when 
+    $a:Applicant( getAge() > 21 || getAge() == 21 )
+    $b:Loan( )
+    then 
+        $b.setDateOfBirthApprove(true);
+end
+
+no-loop
+rule "date birth rejection " salience 10
+when 
+    $a:Applicant( getAge() < 21)
+    $b:Loan( )
+    then 
+        $b.setDateOfBirthApprove(false);
+end
+
+
+no-loop
+rule "nationalIDInssuance approve " salience 9
+when 
+    $a:Applicant( Days(nationalIDIssuanceDate) < 7 || Days(nationalIDIssuanceDate) == 7)
+    $b:Loan( )
+    then 
+        $b.setNationalIDInssuanceDateApprove(true);
+end
+
+
+no-loop
+rule "nationalIDInssuance rejection " salience 9
+when 
+    $a:Applicant(Days(nationalIDIssuanceDate) > 7)
+    $b:Loan( )
+    then 
+        $b.setNationalIDInssuanceDateApprove(true);
+end
+
+
+
+
+
+
+
