@@ -1,0 +1,16 @@
+package com.myspace.loan;
+import com.myspace.loan.Applicant
+
+no-loop
+
+
+rule "approve salary"
+when 
+    $a:Applicant(salary<5000 ) 
+    then 
+        modify($a)
+        {
+            setApprove(false)
+
+        }
+end

@@ -1,0 +1,27 @@
+package com.myspace.loan;
+import com.myspace.loan.Applicant
+
+no-loop
+
+rule "approver name " salience 10
+when 
+    $a:Applicant(amount>10000)
+    then 
+        modify($a)
+        {
+            setAmount(4000)
+        }
+        
+
+end
+
+rule "approver name2" salience 8
+when 
+    $a:Applicant(amount==4000)
+    then 
+    
+        $a.setResponseName("Mostafa");
+        $a.setiScore(7);
+
+end
+

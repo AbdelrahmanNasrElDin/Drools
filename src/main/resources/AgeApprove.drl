@@ -1,0 +1,18 @@
+package com.myspace.loan;
+import com.myspace.loan.Applicant
+
+no-loop
+
+
+
+
+
+rule "approve age "
+when 
+    $a:Applicant( getAge() > 21 && getAge() < 60  )
+    then 
+        modify($a)
+        {
+            setName("nasr")
+        }
+end
