@@ -10,29 +10,24 @@ public class Loan implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 	private java.lang.Double tenor;
-	private java.lang.String homeVerification;
-	private java.lang.String businessVerification;
 	private java.lang.Double totalDBR;
-	private java.util.Date dateOfBirth;
 	private java.lang.Boolean dateOfBirthApprove;
-	private java.util.Date nationalIDInssuanceDate;
 	private java.lang.Boolean nationalIDInssuanceDateApprove;
-	private java.lang.Double monthlyNetIncome;
 	private java.lang.Boolean monthlyNetInComeApprove;
 	private java.lang.Boolean homeVerificationApprove;
 	private java.lang.Boolean businessVerificationApprove;
-	private java.lang.Integer finnacalAmount;
 	private java.lang.Boolean finnacalAmountApprove;
 	private java.lang.Double tenorApprove;
-	private java.lang.Integer customerAgeAtMaturity;
 	private java.lang.Boolean customerAgeAtMaturityApprove;
 	private java.lang.Boolean totalDBRApprove;
 	private java.lang.Double profileRate;
 	private java.lang.Double profileRateApprove;
 
-	private java.lang.Integer age;
-
 	private java.lang.String productName;
+
+	private java.lang.String deviationOnE;
+	private java.lang.String deviationTwo;
+	private java.lang.String deviationThree;
 
 	public Loan() {
 	}
@@ -45,36 +40,12 @@ public class Loan implements java.io.Serializable {
 		this.tenor = tenor;
 	}
 
-	public java.lang.String getHomeVerification() {
-		return this.homeVerification;
-	}
-
-	public void setHomeVerification(java.lang.String homeVerification) {
-		this.homeVerification = homeVerification;
-	}
-
-	public java.lang.String getBusinessVerification() {
-		return this.businessVerification;
-	}
-
-	public void setBusinessVerification(java.lang.String businessVerification) {
-		this.businessVerification = businessVerification;
-	}
-
 	public java.lang.Double getTotalDBR() {
 		return this.totalDBR;
 	}
 
 	public void setTotalDBR(java.lang.Double totalDBR) {
 		this.totalDBR = totalDBR;
-	}
-
-	public java.util.Date getDateOfBirth() {
-		return this.dateOfBirth;
-	}
-
-	public void setDateOfBirth(java.util.Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
 	}
 
 	public java.lang.Boolean getDateOfBirthApprove() {
@@ -85,15 +56,6 @@ public class Loan implements java.io.Serializable {
 		this.dateOfBirthApprove = dateOfBirthApprove;
 	}
 
-	public java.util.Date getNationalIDInssuanceDate() {
-		return this.nationalIDInssuanceDate;
-	}
-
-	public void setNationalIDInssuanceDate(
-			java.util.Date nationalIDInssuanceDate) {
-		this.nationalIDInssuanceDate = nationalIDInssuanceDate;
-	}
-
 	public java.lang.Boolean getNationalIDInssuanceDateApprove() {
 		return this.nationalIDInssuanceDateApprove;
 	}
@@ -101,14 +63,6 @@ public class Loan implements java.io.Serializable {
 	public void setNationalIDInssuanceDateApprove(
 			java.lang.Boolean nationalIDInssuanceDateApprove) {
 		this.nationalIDInssuanceDateApprove = nationalIDInssuanceDateApprove;
-	}
-
-	public java.lang.Double getMonthlyNetIncome() {
-		return this.monthlyNetIncome;
-	}
-
-	public void setMonthlyNetIncome(java.lang.Double monthlyNetIncome) {
-		this.monthlyNetIncome = monthlyNetIncome;
 	}
 
 	public java.lang.Boolean getMonthlyNetInComeApprove() {
@@ -138,14 +92,6 @@ public class Loan implements java.io.Serializable {
 		this.businessVerificationApprove = businessVerificationApprove;
 	}
 
-	public java.lang.Integer getFinnacalAmount() {
-		return this.finnacalAmount;
-	}
-
-	public void setFinnacalAmount(java.lang.Integer finnacalAmount) {
-		this.finnacalAmount = finnacalAmount;
-	}
-
 	public java.lang.Boolean getFinnacalAmountApprove() {
 		return this.finnacalAmountApprove;
 	}
@@ -160,14 +106,6 @@ public class Loan implements java.io.Serializable {
 
 	public void setTenorApprove(java.lang.Double tenorApprove) {
 		this.tenorApprove = tenorApprove;
-	}
-
-	public java.lang.Integer getCustomerAgeAtMaturity() {
-		return this.customerAgeAtMaturity;
-	}
-
-	public void setCustomerAgeAtMaturity(java.lang.Integer customerAgeAtMaturity) {
-		this.customerAgeAtMaturity = customerAgeAtMaturity;
 	}
 
 	public java.lang.Boolean getCustomerAgeAtMaturityApprove() {
@@ -203,19 +141,6 @@ public class Loan implements java.io.Serializable {
 		this.profileRateApprove = profileRateApprove;
 	}
 
-	public java.lang.Integer getAge() {
-		Date curentDate = new Date();
-		long difference_In_Time = curentDate.getTime() - dateOfBirth.getTime();
-		long difference_In_Years = TimeUnit.MILLISECONDS
-				.toDays(difference_In_Time) / 365l;
-		this.age = (int) difference_In_Years;
-		return this.age;
-	}
-
-	public void setAge(java.lang.Integer age) {
-		this.age = age;
-	}
-
 	public java.lang.String getProductName() {
 		return this.productName;
 	}
@@ -224,45 +149,60 @@ public class Loan implements java.io.Serializable {
 		this.productName = productName;
 	}
 
-	public Loan(java.lang.Double tenor, java.lang.String homeVerification,
-			java.lang.String businessVerification, java.lang.Double totalDBR,
-			java.util.Date dateOfBirth, java.lang.Boolean dateOfBirthApprove,
-			java.util.Date nationalIDInssuanceDate,
+	public java.lang.String getDeviationOnE() {
+		return this.deviationOnE;
+	}
+
+	public void setDeviationOnE(java.lang.String deviationOnE) {
+		this.deviationOnE = deviationOnE;
+	}
+
+	public java.lang.String getDeviationTwo() {
+		return this.deviationTwo;
+	}
+
+	public void setDeviationTwo(java.lang.String deviationTwo) {
+		this.deviationTwo = deviationTwo;
+	}
+
+	public java.lang.String getDeviationThree() {
+		return this.deviationThree;
+	}
+
+	public void setDeviationThree(java.lang.String deviationThree) {
+		this.deviationThree = deviationThree;
+	}
+
+	public Loan(java.lang.Double tenor, java.lang.Double totalDBR,
+			java.lang.Boolean dateOfBirthApprove,
 			java.lang.Boolean nationalIDInssuanceDateApprove,
-			java.lang.Double monthlyNetIncome,
 			java.lang.Boolean monthlyNetInComeApprove,
 			java.lang.Boolean homeVerificationApprove,
 			java.lang.Boolean businessVerificationApprove,
-			java.lang.Integer finnacalAmount,
 			java.lang.Boolean finnacalAmountApprove,
 			java.lang.Double tenorApprove,
-			java.lang.Integer customerAgeAtMaturity,
 			java.lang.Boolean customerAgeAtMaturityApprove,
 			java.lang.Boolean totalDBRApprove, java.lang.Double profileRate,
-			java.lang.Double profileRateApprove, java.lang.Integer age,
-			java.lang.String productName) {
+			java.lang.Double profileRateApprove, java.lang.String productName,
+			java.lang.String deviationOnE, java.lang.String deviationTwo,
+			java.lang.String deviationThree) {
 		this.tenor = tenor;
-		this.homeVerification = homeVerification;
-		this.businessVerification = businessVerification;
 		this.totalDBR = totalDBR;
-		this.dateOfBirth = dateOfBirth;
 		this.dateOfBirthApprove = dateOfBirthApprove;
-		this.nationalIDInssuanceDate = nationalIDInssuanceDate;
 		this.nationalIDInssuanceDateApprove = nationalIDInssuanceDateApprove;
-		this.monthlyNetIncome = monthlyNetIncome;
 		this.monthlyNetInComeApprove = monthlyNetInComeApprove;
 		this.homeVerificationApprove = homeVerificationApprove;
 		this.businessVerificationApprove = businessVerificationApprove;
-		this.finnacalAmount = finnacalAmount;
 		this.finnacalAmountApprove = finnacalAmountApprove;
 		this.tenorApprove = tenorApprove;
-		this.customerAgeAtMaturity = customerAgeAtMaturity;
 		this.customerAgeAtMaturityApprove = customerAgeAtMaturityApprove;
 		this.totalDBRApprove = totalDBRApprove;
 		this.profileRate = profileRate;
 		this.profileRateApprove = profileRateApprove;
-		this.age = age;
 		this.productName = productName;
+		this.deviationOnE = deviationOnE;
+		this.deviationTwo = deviationTwo;
+		this.deviationThree = deviationThree;
 	}
 
 }
